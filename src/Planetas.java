@@ -6,11 +6,10 @@ public class Planetas {
         int diametroKm = 0;
         boolean observable = false;
         double masaPlaneta = 0;
-enum tipoPlaneta {GASEOSOS, TERRRESTRE, ENANO};
+        enum tipoPlaneta {GASEOSOS, TERRRESTRE, ENANO};
         tipoPlaneta tipo;
 
-
-        public Planetas(int cantidadSatelites, double volumenKm3, String nombre, int distanciaMediaSol, int diametroKm, boolean observableSimpleVista) {
+        public Planetas(int cantidadSatelites, double volumenKm3, String nombre, int distanciaMediaSol, int diametroKm, boolean observable, double masaPlaneta, tipoPlaneta tipo) {
                 this.cantidadSatelites = cantidadSatelites;
                 this.volumenKm3 = volumenKm3;
                 this.nombre = nombre;
@@ -18,6 +17,15 @@ enum tipoPlaneta {GASEOSOS, TERRRESTRE, ENANO};
                 this.diametroKm = diametroKm;
                 this.observable = observable;
                 this.masaPlaneta = masaPlaneta;
+                this.tipo = tipo;
+        }
+
+        public tipoPlaneta getTipo() {
+                return tipo;
+        }
+
+        public void setTipo(tipoPlaneta tipo) {
+                this.tipo = tipo;
         }
 
         public void imprimirPantalla(){
@@ -27,6 +35,8 @@ enum tipoPlaneta {GASEOSOS, TERRRESTRE, ENANO};
                 System.out.println("Distancia media al sol (km): " + distanciaMediaSol);
                 System.out.println("Diámetro (km): " + diametroKm);
                 System.out.println("Es observable a simple vista? " + observable);
+                System.out.println("La masa es: " + masaPlaneta);
+                System.out.println("El tipo de planeta es: " + tipo);
         }
 
         public double densidadPlaneta(){
